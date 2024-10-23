@@ -15,3 +15,5 @@ SDMMC access
 ## LICENSE
 
 GPLv2
+
+arm9linuxfw is based off the [arm9linuxfw](https://github.com/linux-3ds/arm9linuxfw) repository from the ["Linux for 3DS" team](https://github.com/linux-3ds).
