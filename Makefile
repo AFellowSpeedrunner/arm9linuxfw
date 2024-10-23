@@ -43,16 +43,16 @@ $(TARGET).bin: $(TARGET).elf
 
 $(TARGET).elf: $(SOURCE_OUTPUT)
 	@mkdir -p "$(@D)"
-	@$(CC) $(LDFLAGS) $^ -o $@
+	@arm-none-eabi-gcc $(LDFLAGS) $^ -o $@
 
 $(BUILD)/%.c.o: $(SOURCE)/%.c
 	@mkdir -p "$(@D)"
 	@echo "  $<"
-	@$(CC) -c $(CFLAGS) -o $@ $<
+	@arm-none-eabi-gcc -c $(CFLAGS) -o $@ $<
 
 $(BUILD)/%.s.o: $(SOURCE)/%.s
 	@mkdir -p "$(@D)"
 	@echo "  $<"
-	@$(CC) -c $(ASFLAGS) -o $@ $<
+	@arm-none-eabi-gcc -c $(ASFLAGS) -o $@ $<
 
 include $(call rwildcard, $(BUILD), *.d)
